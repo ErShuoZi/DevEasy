@@ -6,13 +6,13 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    // "ignoreDeprecations": "5.0"
-    // "verbatimModuleSyntax":true
+    "ignoreDeprecations": "5.0"
   },
 
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
+    
   ]
 }
