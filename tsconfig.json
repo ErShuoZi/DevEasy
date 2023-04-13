@@ -6,7 +6,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "ignoreDeprecations": "5.0"
   },
   "references": [
     {
