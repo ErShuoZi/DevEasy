@@ -1,0 +1,32 @@
+/* semantic color variables for this project */
+:root {
+  --primary-color: #3872e0;
+  --font-color: #333;
+  --font-size-small: 12px;
+  --font-size-medium: 14px;
+  --font-size-large: 18px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  #app {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+img {
+  display: block;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}

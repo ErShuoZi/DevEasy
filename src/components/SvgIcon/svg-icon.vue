@@ -1,48 +1,22 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true">
+  <svg :style="props.iconStyle" class="svg-icon" aria-hidden="true">
     <use :href="symbolId"></use>
   </svg>
 </template>
 
 <script setup lang="ts" name="SvgIcon">
 import { computed, defineProps } from "vue"
+import type { CSSProperties } from "vue"
 interface SvgIconProps {
   iconName: string
+  iconStyle?: CSSProperties
 }
-const props = defineProps<SvgIconProps>()
+const props = withDefaults(defineProps<SvgIconProps>(), {
+  iconStyle: () => ({ width: "100px", height: "100px" })
+})
+
+console.log(props.iconStyle)
 const symbolId = computed(() => `#svgIcon-${props.iconName}`)
 </script>
 
 <style lang="scss" scoped></style>
-
-<!-- <template>
-  <svg aria-hidden="true">
-    <use :href="symbolId" :fill="color" />
-  </svg>
-</template>
-
-<script lang="ts">
-import { defineComponent, computed } from "vue"
-
-export default defineComponent({
-  name: "SvgIcon",
-  props: {
-    prefix: {
-      type: String,
-      default: "icon"
-    },
-    name: {
-      type: String,
-      required: true
-    },
-    color: {
-      type: String,
-      default: "#333"
-    }
-  },
-  setup(props) {
-    const symbolId = computed(() => `#${props.prefix}-${props.name}`)
-    return { symbolId }
-  }
-})
-</script> -->
