@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import Login from "./views/Login/Login.vue"
+import Login from "./views/Login/login.vue"
 </script>
 
 <style scoped lang="scss">
