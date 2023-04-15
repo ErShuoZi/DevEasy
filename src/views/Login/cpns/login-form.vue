@@ -1,7 +1,13 @@
 <template>
   <div class="login-form">
     <div class="web-dec">
-      <v-icon icon="mdi-home" />
+      <v-switch
+        prepend-icon="mdi-view-dashboard"
+        class="switch"
+        color="red"
+        value="red"
+        hide-details
+      ></v-switch>
       <div class="logo">
         <SvgIcon
           :iconStyle="{ width: '60px', height: '52px' }"
@@ -51,7 +57,11 @@
             :dense="passwordInputStyleConfig.dense"
             :color="passwordInputStyleConfig.color"
           ></v-text-field>
-          <v-btn width="100%" @click="submit" color="primary--blue"
+          <v-btn
+            width="100%"
+            @click="submit"
+            color="primary--blue"
+            :loading="SubmitLogin"
             >Submit</v-btn
           >
         </v-form>
@@ -127,11 +137,14 @@ const passwordInputStyleConfig = reactive({
 const valid = ref(false)
 const LoginFormRef = ref()
 const useUserStore = UserStore()
+const SubmitLogin = ref(false)
 // 执行登录
 const submit = () => {
-  LoginFormRef.value.validate().then((valid: any) => {
+  LoginFormRef.value.validate().then(async (valid: any) => {
     if (valid.valid) {
-      useUserStore.UserLoginAction(userInputInfo)
+      SubmitLogin.value = true
+      await useUserStore.UserLoginAction(userInputInfo)
+      SubmitLogin.value = false
     }
     return
   })
@@ -140,7 +153,6 @@ const submit = () => {
 
 <style scoped lang="scss">
 .login-form {
-  position: relative;
   bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -149,11 +161,19 @@ const submit = () => {
   min-width: 500px;
   min-height: 500px;
   margin-right: 70px;
+
   .web-dec {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    .switch {
+      position: absolute;
+      z-index: 100;
+      top: -190px;
+      right: -100px;
+    }
     .logo-text {
       color: var(--font-color);
       font-size: 40px;
