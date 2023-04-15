@@ -1,15 +1,13 @@
 <template>
-  <div class="app">
-    <Login />
+  <div class="view">
+    <RouterView />
   </div>
 </template>
 
-<script setup lang="ts">
-import Login from "./views/Login/login.vue"
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
-.app {
+.view {
   width: 100%;
   height: 100%;
 }

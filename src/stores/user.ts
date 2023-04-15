@@ -1,5 +1,5 @@
-import { ref, computed } from "vue"
 import { defineStore } from "pinia"
+import router from "@/router/index"
 import { handleUserLoginNetworkRequest } from "@/api/module/login"
 import type { IUserInputInfo } from "@/views/Login/cpns/types/index"
 
@@ -12,7 +12,10 @@ const UserStore = defineStore("User", {
   actions: {
     async UserLoginAction(userInputInfo: IUserInputInfo) {
       const res = await handleUserLoginNetworkRequest(userInputInfo)
-      console.log(res)
+      if (res.code === 200) {
+        console.log(res)
+        router.push("/layout")
+      }
     }
   }
 })

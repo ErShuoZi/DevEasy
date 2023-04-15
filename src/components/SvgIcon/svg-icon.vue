@@ -15,7 +15,6 @@ const props = withDefaults(defineProps<SvgIconProps>(), {
   iconStyle: () => ({ width: "100px", height: "100px" })
 })
 
-console.log(props.iconStyle)
 const symbolId = computed(() => `#svgIcon-${props.iconName}`)
 </script>
 

@@ -30,3 +30,13 @@ img {
   position: relative;
   font-weight: normal;
 }
+
+#nprogress .bar {
+  background: var(--primary-color) !important; //自定义颜色
+}
+// 3872e0
+#nprogress .spinner-icon {
+  border-top-color: var(--primary-color) !important;
+  border-left-color: var(--primary-color) !important;
+  border-right-color: var(--primary-color) !important;
+}

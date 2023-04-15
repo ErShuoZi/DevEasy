@@ -16,7 +16,7 @@ class DevEasyRequest {
     )
     this.instance.interceptors.response.use(
       (response) => {
-        return response
+        return response.data
       },
       (err) => {
         return err
