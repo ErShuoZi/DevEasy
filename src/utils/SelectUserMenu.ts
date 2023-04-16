@@ -5,8 +5,6 @@ const RealAddRoutes: RouteRecordRaw[] = []
 export default function SelectUserMenu(userMenus: any) {
   for (const menu of userMenus) {
     const route = dynamicList.find((item) => {
-      console.log(item.path)
-      console.log(menu.path)
       return item.path === menu.path
     })
     if (route) {

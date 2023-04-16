@@ -1,5 +1,5 @@
 <template>
-  <div class="view">
+  <div class="main">
     <RouterView />
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-.view {
+.main {
   width: 100%;
   height: 100%;
 }

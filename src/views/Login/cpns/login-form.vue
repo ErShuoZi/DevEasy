@@ -1,13 +1,11 @@
 <template>
   <div class="login-form">
     <div class="web-dec">
-      <v-switch
-        prepend-icon="mdi-view-dashboard"
-        class="switch"
-        color="red"
-        value="red"
-        hide-details
-      ></v-switch>
+      <span
+        @click="toggleTheme"
+        :class="['switch', 'mdi', SwitchThemeIconClass]"
+      ></span>
+
       <div class="logo">
         <SvgIcon
           :iconStyle="{ width: '60px', height: '52px' }"
@@ -60,7 +58,7 @@
           <v-btn
             width="100%"
             @click="submit"
-            color="primary--blue"
+            class="bg-login-btn white--text"
             :loading="SubmitLogin"
             >Submit</v-btn
           >
@@ -71,7 +69,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue"
+import { ref, reactive, computed } from "vue"
+import { useTheme } from "vuetify"
 import type { IUserInputInfo } from "./types/index"
 import UserStore from "@/stores/user"
 
@@ -149,6 +148,20 @@ const submit = () => {
     return
   })
 }
+
+const DarkActive = ref(false)
+const SwitchThemeIconClass = computed(() =>
+  DarkActive.value ? "mdi-weather-night" : "mdi-weather-sunny"
+)
+const theme = useTheme()
+const toggleTheme = () => {
+  DarkActive.value = !DarkActive.value
+  if (DarkActive.value) {
+    theme.global.name.value = "dark"
+  } else {
+    theme.global.name.value = "light"
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -173,6 +186,7 @@ const submit = () => {
       z-index: 100;
       top: -190px;
       right: -100px;
+      font-size: 24px;
     }
     .logo-text {
       color: var(--font-color);
@@ -183,9 +197,6 @@ const submit = () => {
   }
   .form {
     width: 100%;
-    .white--text {
-      color: #fff;
-    }
   }
 }
 </style>
