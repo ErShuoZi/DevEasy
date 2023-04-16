@@ -1,10 +1,8 @@
 <template>
-  <div class="toggle-theme">
-    <span
-      @click="toggleTheme"
-      :class="['toggle-theme-icon', 'mdi', SwitchThemeIconClass]"
-    ></span>
-  </div>
+  <span
+    @click="toggleTheme"
+    :class="['toggle-theme-icon', 'mdi', SwitchThemeIconClass]"
+  ></span>
 </template>
 
 <script setup lang="ts">
@@ -15,9 +13,9 @@ const DarkActive = ref(false)
 const toggleTheme = () => {
   DarkActive.value = !DarkActive.value
   if (DarkActive.value) {
-    theme.global.name.value = "dark"
+    theme.global.name.value = "themeDarkConfig"
   } else {
-    theme.global.name.value = "light"
+    theme.global.name.value = "themeLightConfig"
   }
 }
 const SwitchThemeIconClass = computed(() =>
@@ -25,13 +23,4 @@ const SwitchThemeIconClass = computed(() =>
 )
 </script>
 
-<style scoped lang="scss">
-.toggle-theme {
-  position: absolute;
-  .toggle-theme-icon {
-    position: absolute;
-    z-index: 100;
-    font-size: 24px;
-  }
-}
-</style>
+<style scoped lang="scss"></style>

@@ -18,12 +18,19 @@ import * as components from "vuetify/components"
 import * as directives from "vuetify/directives"
 import "@mdi/font/css/materialdesignicons.css"
 import "./style/variables.scss"
+import { themeLightConfig, themeDarkConfig } from "./global/theme/index"
+// import { md1 } from "vuetify/blueprints"
 
 const vuetify = createVuetify({
   components,
   directives,
+  // blueprint: md1,
   theme: {
-    defaultTheme: "light"
+    defaultTheme: "themeLightConfig",
+    themes: {
+      themeLightConfig,
+      themeDarkConfig
+    }
   }
 })
 

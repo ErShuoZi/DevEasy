@@ -1,30 +1,25 @@
 <template>
   <div class="login">
-    <TopTools />
-    <div class="login-main">
-      <LoginLeftSvg />
+    <TopTools :isLogin="true" />
+    <v-card class="auth-card-v1 text-center d-flex align-center h-screen">
+      <v-img aspect-ratio="2" :src="getAssetUrl('login-bg.png')"></v-img>
+
       <LoginForm />
-    </div>
+    </v-card>
   </div>
 </template>
 
 <script setup lang="ts" name="Login">
 import TopTools from "@/components/top-tools/index.vue"
-import LoginLeftSvg from "./cpns/login-left-Svg.vue"
 import LoginForm from "./cpns/login-form.vue"
+import { getAssetUrl } from "@/utils/getAssets"
 </script>
 
 <style scoped lang="scss">
 .login {
-  min-width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  .login-main {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
+  height: 100%;
+  .auth-card-v2 {
+    /* background-color: red; */
   }
 }
 </style>

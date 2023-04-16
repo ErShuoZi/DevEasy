@@ -7,7 +7,7 @@
           iconName="logo"
         />
       </div>
-      <div class="logo-text">DevEasy</div>
+      <div class="text-h3">DevEasy</div>
     </div>
     <v-sheet class="grey-lighten-3" rounded>
       <v-card class="mx-auto px-6 py-8">
@@ -162,13 +162,6 @@ const submit = () => {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-
-    .logo-text {
-      color: var(--font-color);
-      font-size: 40px;
-      font-weight: 700;
-      padding-left: 15px;
-    }
   }
   .form {
     width: 100%;

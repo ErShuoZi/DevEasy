@@ -2,21 +2,23 @@
   <div class="user-menus">
     <v-list>
       <v-list-item
+        density="default"
         :prepend-avatar="getAssetUrl('avatar.jpg')"
-        :title="userInfo.username"
+        :title="userInfo.usertitle"
         :subtitle="userInfo.useremail"
       ></v-list-item>
     </v-list>
 
     <v-divider></v-divider>
 
-    <v-list density="compact" nav>
+    <v-list density="comfortable" nav>
       <template v-for="(menu, index) in userMenus" :key="index">
         <v-list-item
-          prepend-icon="mdi-folder"
+          :prepend-icon="menu.icon"
           :title="menu.name"
           :value="menu.name"
           :to="menu.path"
+          lines="two"
         >
         </v-list-item>
       </template>

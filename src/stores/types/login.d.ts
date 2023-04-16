@@ -5,6 +5,7 @@ export type IUserMenus = {
   meta: {
     title: string
   }
+  icon: string
 }
 export type IUserInfo = {
   username?: string

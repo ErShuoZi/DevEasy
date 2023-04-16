@@ -61,7 +61,6 @@ const useUserStore = defineStore("User", {
         for (const route of routes) {
           router.addRoute("layout", route)
         }
-        // router.replace(router.currentRoute.value)
       }
     }
   }

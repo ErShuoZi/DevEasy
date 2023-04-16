@@ -1,8 +1,6 @@
-$navigation-drawer-background: var(--primary-color);
+$bg-primary-background: #f4f5fa;
+$navigation-drawer-background: $bg-primary-background;
 
-.v-navigation-drawer {
-  background-color: $navigation-drawer-background;
-}
 .bg-login-btn {
   background-color: var(--primary-color);
 }
