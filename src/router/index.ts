@@ -19,16 +19,7 @@ const router = createRouter({
       path: "/layout",
       name: "layout",
       component: () => import("@/layout/index.vue"),
-      children: [
-        // {
-        //   path: "/layout/index",
-        //   component: () => import("@/views/Home/index.vue")
-        // }
-        // {
-        //   path: "/layout/form",
-        //   component: () => import("@/components/form/form.vue")
-        // }
-      ]
+      children: []
     }
     // {
     //   path: "/:pathMatch(.*)",

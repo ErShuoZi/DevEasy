@@ -9,10 +9,9 @@ export default function SelectUserMenu(userMenus: any) {
       return item.path === menu.path
     })
     if (route) {
-      // if (!RealAddRoutes.find((item) => item.path === route.path)) {
-      //   RealAddRoutes.push(route)
-      // }
-      RealAddRoutes.push(route)
+      if (!RealAddRoutes.find((item) => item.path === route.path)) {
+        RealAddRoutes.push(route)
+      }
     }
     if (!firstMenu && route) firstMenu = menu
   }
