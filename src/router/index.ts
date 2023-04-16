@@ -1,11 +1,40 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory } from "vue-router"
 import nprogress from "@/global/nprogress/nprogress"
-import whiteList from "@/router/whiteList/index"
 import { localCache } from "@/utils/DevEasyCache"
 import { LOGIN_TOKEN } from "@/global/constants"
+import { firstMenu } from "@/utils/SelectUserMenu"
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [...whiteList]
+  history: createWebHashHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      redirect: "/layout"
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("@/views/Login/login.vue")
+    },
+    {
+      path: "/layout",
+      name: "layout",
+      component: () => import("@/layout/index.vue"),
+      children: [
+        // {
+        //   path: "/layout/index",
+        //   component: () => import("@/views/Home/index.vue")
+        // }
+        // {
+        //   path: "/layout/form",
+        //   component: () => import("@/components/form/form.vue")
+        // }
+      ]
+    }
+    // {
+    //   path: "/:pathMatch(.*)",
+    //   component: () => import("@/views/404/not-found.vue")
+    // }
+  ]
 })
 
 router.beforeEach((to, from) => {
@@ -15,7 +44,11 @@ router.beforeEach((to, from) => {
     return "/login"
   }
   if (to.path === "/layout") {
-    return "/layout"
+    if (firstMenu) {
+      return firstMenu.path
+    } else {
+      return "/layout"
+    }
   }
 })
 

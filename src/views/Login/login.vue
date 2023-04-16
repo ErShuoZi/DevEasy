@@ -1,11 +1,15 @@
 <template>
   <div class="login">
-    <LoginLeftSvg />
-    <LoginForm />
+    <TopTools />
+    <div class="login-main">
+      <LoginLeftSvg />
+      <LoginForm />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts" name="Login">
+import TopTools from "@/components/top-tools/index.vue"
 import LoginLeftSvg from "./cpns/login-left-Svg.vue"
 import LoginForm from "./cpns/login-form.vue"
 </script>
@@ -15,7 +19,12 @@ import LoginForm from "./cpns/login-form.vue"
   min-width: 100%;
   min-height: 100%;
   display: flex;
+  flex-direction: column;
 
-  justify-content: space-around;
+  .login-main {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 </style>

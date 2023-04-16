@@ -11,7 +11,11 @@ Mock.mock(`/api/login`, "post", (option) => {
       message: "登录成功",
       data: {
         token: "mock-token",
-        username: "admin"
+        userInfo: {
+          username: "admin",
+          usertitle: "DevEasy ErShuoZi",
+          useremail: "liushuo2951@gmailcom"
+        }
       }
     }
   } else if (username === "user" && password === "123456") {
@@ -20,7 +24,11 @@ Mock.mock(`/api/login`, "post", (option) => {
       message: "登录成功",
       data: {
         token: "mock-token",
-        username: "user"
+        userInfo: {
+          username: "user",
+          usertitle: "DevEasy User",
+          useremail: "deveasy@gmailcom"
+        }
       }
     }
   } else {
@@ -72,14 +80,6 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
             title: "首页"
           }
         }
-        // {
-        //   path: "/layout/form",
-        //   name: "form",
-        //   component: "/layout/form",
-        //   meta: {
-        //     title: "表单"
-        //   }
-        // }
       ]
     }
   } else {

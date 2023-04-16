@@ -1,11 +1,6 @@
 <template>
   <div class="login-form">
     <div class="web-dec">
-      <span
-        @click="toggleTheme"
-        :class="['switch', 'mdi', SwitchThemeIconClass]"
-      ></span>
-
       <div class="logo">
         <SvgIcon
           :iconStyle="{ width: '60px', height: '52px' }"
@@ -58,7 +53,7 @@
           <v-btn
             width="100%"
             @click="submit"
-            class="bg-login-btn white--text"
+            class="bg-login-btn text-white"
             :loading="SubmitLogin"
             >Submit</v-btn
           >
@@ -69,10 +64,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from "vue"
-import { useTheme } from "vuetify"
+import { ref, reactive } from "vue"
+
 import type { IUserInputInfo } from "./types/index"
-import UserStore from "@/stores/user"
+import useUserStore from "@/stores/user"
 
 const userInputInfo = reactive<IUserInputInfo>({
   username: "",
@@ -135,32 +130,18 @@ const passwordInputStyleConfig = reactive({
 
 const valid = ref(false)
 const LoginFormRef = ref()
-const useUserStore = UserStore()
+const userStore = useUserStore()
 const SubmitLogin = ref(false)
 // 执行登录
 const submit = () => {
   LoginFormRef.value.validate().then(async (valid: any) => {
     if (valid.valid) {
       SubmitLogin.value = true
-      await useUserStore.UserLoginAction(userInputInfo)
+      await userStore.UserLoginAction(userInputInfo)
       SubmitLogin.value = false
     }
     return
   })
-}
-
-const DarkActive = ref(false)
-const SwitchThemeIconClass = computed(() =>
-  DarkActive.value ? "mdi-weather-night" : "mdi-weather-sunny"
-)
-const theme = useTheme()
-const toggleTheme = () => {
-  DarkActive.value = !DarkActive.value
-  if (DarkActive.value) {
-    theme.global.name.value = "dark"
-  } else {
-    theme.global.name.value = "light"
-  }
 }
 </script>
 
@@ -181,13 +162,7 @@ const toggleTheme = () => {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    .switch {
-      position: absolute;
-      z-index: 100;
-      top: -190px;
-      right: -100px;
-      font-size: 24px;
-    }
+
     .logo-text {
       color: var(--font-color);
       font-size: 40px;

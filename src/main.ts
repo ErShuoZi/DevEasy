@@ -8,8 +8,8 @@ import router from "./router"
 import "normalize.css"
 import "./assets/index.scss"
 
-import registerPlugin from "./global/globalCpnRegister/index"
 import "./api/mock/index"
+import registerPlugin from "./global/globalCpnRegister/index"
 
 // Vuetify
 import "vuetify/styles"
@@ -30,8 +30,10 @@ const vuetify = createVuetify({
 const app = createApp(App)
 
 app.use(createPinia())
+
 app.use(router)
 app.use(registerPlugin)
+
 app.use(vuetify)
 
 app.mount("#app")
