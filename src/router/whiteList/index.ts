@@ -19,8 +19,12 @@ const whiteList: RouteRecordRaw[] = [
     ]
   },
   {
-    path: "/:pathMatch(.*)",
+    path: "/notFound",
     component: () => import("@/views/404/not-found.vue")
+  },
+  {
+    path: "/:pathMatch(.*)",
+    redirect: "/notFound"
   }
 ]
 
