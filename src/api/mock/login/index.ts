@@ -78,7 +78,7 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
         },
         {
           path: "/layout/auth",
-          name: "Auth",
+          name: "auth",
           component: "/layout/Auth",
           meta: {
             title: "权限"
@@ -86,8 +86,8 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
           icon: "mdi-lock-outline"
         },
         {
-          path: "/layout/component",
-          name: "component",
+          path: "/layout/components",
+          name: "components",
           component: "/layout/component",
           meta: {
             title: "常用组件"
@@ -114,7 +114,7 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
         },
         {
           path: "/layout/menu",
-          name: "menu",
+          name: "menus",
           component: "/layout/menu",
           meta: {
             title: "菜单嵌套"

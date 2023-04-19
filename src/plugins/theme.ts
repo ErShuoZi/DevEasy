@@ -1,9 +1,13 @@
 import type { ThemeDefinition } from "vuetify"
 export const LightTheme: ThemeDefinition = {
   dark: false,
+  variables: {
+    "high-emphasis-opacity": 0.87,
+    loginFormBg: "#f4f5fa"
+  },
   colors: {
     background: "#f4f5fa",
-    surface: "#FFFFFF",
+    surface: "##fff",
     primary: "#8958f4",
     "primary-darken-1": "#3700B3",
     secondary: "#f0ebfd",
@@ -17,8 +21,12 @@ export const LightTheme: ThemeDefinition = {
 
 export const DarkTheme: ThemeDefinition = {
   dark: true,
+  variables: {
+    "high-emphasis-opacity": 0.87,
+    loginFormBg: "#302d49"
+  },
   colors: {
-    background: "#27243b",
+    background: "#272439",
     surface: "#302d49",
     primary: "#8958f4",
     "primary-darken-1": "#3700B3",

@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters class="h-100 d-flex align-center">
     <v-col
-      class="h-100 d-none d-lg-flex justify-center align-center bg-background"
+      class="h-100 d-none d-lg-flex justify-center align-center"
       cols="12"
       lg="8"
     >
@@ -14,7 +14,10 @@
       </v-responsive>
     </v-col>
     <v-col class="h-100" cols="12" lg="4">
-      <v-card class="pa-2 h-100 d-flex justify-center align-center">
+      <v-card
+        class="pa-2 h-100 d-flex justify-center align-center"
+        color="loginFormBg"
+      >
         <div class="d-block">
           <v-card-text>
             <div class="text-h5">Welcome to DevEasy! 👏🏻</div>
@@ -35,7 +38,6 @@
                     v-model="userInfo.username"
                     label="Email"
                     variant="outlined"
-                    clearable
                     hide-details
                     color="primary"
                   ></v-text-field>
@@ -48,7 +50,6 @@
                     type="password"
                     label="Password"
                     variant="outlined"
-                    clearable
                     hide-details
                     append-inner-icon="mdi-eye"
                   ></v-text-field>
@@ -115,7 +116,7 @@ import { getAssetUrl } from "@/utils/getAssets"
 import useUserStore from "@/stores/user"
 import { useTheme } from "vuetify"
 const theme = useTheme()
-console.log(theme)
+
 const isDark = computed(() => theme.global.current.value.dark)
 
 const userInfo = reactive({

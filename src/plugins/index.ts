@@ -6,11 +6,12 @@ import useUserStore from "@/stores/user"
 import vuetify from "./vuetify"
 
 import "virtual:svg-icons-register"
+import i18n from "./vuei18n"
 
 export function registerPlugin(app: App) {
   app.component("SvgIcon", SvgIcon), app.use(createPinia()).use(vuetify)
   getCacheWhenUserRefresh()
-  app.use(router)
+  app.use(router).use(i18n)
 }
 
 export function getCacheWhenUserRefresh() {

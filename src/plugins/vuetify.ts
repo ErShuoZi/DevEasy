@@ -12,6 +12,11 @@ import { LightTheme, DarkTheme } from "./theme"
 const vuetify = createVuetify({
   components,
   directives,
+  defaults: {
+    // global: {
+    //   ripple: false
+    // }
+  },
   icons: {
     defaultSet: "mdi",
     aliases,

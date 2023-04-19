@@ -18,7 +18,7 @@ const dynamicList: RouteRecordRaw[] = [
     component: () => import("@/views/Auth/index.vue")
   },
   {
-    path: "/layout/component",
+    path: "/layout/components",
     component: () => import("@/views/Component/index.vue")
   },
   {
