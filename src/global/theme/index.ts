@@ -5,14 +5,15 @@ const themeLightConfig: ThemeDefinition = {
   colors: {
     background: "#f4f5fa",
     surface: "#f4f5fa",
-    primary: "#f4f5fa",
+    primary: "#9c73f6",
     "primary-darken-1": "#f4f5fa",
-    secondary: "#f4f5fa",
-    "secondary-darken-1": "#f4f5fa",
+    secondary: "#FFFFFF",
+    "secondary-darken-1": "#ffc947",
+    "bg-login-btn": "#9c73f6",
     error: "#d85140",
     info: "#d85140",
     success: "#d85140",
-    warning: ""
+    warning: "#27243b"
   }
 }
 
@@ -20,15 +21,16 @@ const themeDarkConfig: ThemeDefinition = {
   dark: true,
   colors: {
     background: "#302d49",
-    surface: "#302d49",
-    primary: "#d85140",
-    "primary-darken-1": "#d85140",
-    secondary: "#d85140",
-    "secondary-darken-1": "#d85140",
-    error: "#d85140",
-    info: "#d85140",
-    success: "#d85140",
-    warning: ""
+    surface: "#27243b",
+    primary: "#27243b",
+    "primary-darken-1": "#27243b",
+    secondary: "#302d49",
+    "secondary-darken-1": "#ffc947",
+    error: "#27243b",
+    info: "#27243b",
+    success: "#27243b",
+    warning: "#27243b",
+    "bg-login-btn": "#9c73f6"
   }
 }
 

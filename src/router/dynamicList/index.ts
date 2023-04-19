@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from "vue-router"
 const dynamicList: RouteRecordRaw[] = [
   {
     path: "/layout/index",
+    name: "index",
     component: () => import("@/views/Home/index.vue")
   },
   {
@@ -10,7 +11,7 @@ const dynamicList: RouteRecordRaw[] = [
   },
   {
     path: "/layout/table",
-    component: () => import("@/views/table/index.vue")
+    component: () => import("@/views/Table/index.vue")
   },
   {
     path: "/layout/auth",

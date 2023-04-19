@@ -1,13 +1,6 @@
 <template>
   <div class="user-menus">
-    <v-list>
-      <v-list-item
-        density="default"
-        :prepend-avatar="getAssetUrl('avatar.jpg')"
-        :title="userInfo.usertitle"
-        :subtitle="userInfo.useremail"
-      ></v-list-item>
-    </v-list>
+    123
 
     <v-divider></v-divider>
 
@@ -27,21 +20,14 @@
 </template>
 
 <script lang="ts" setup>
-import { getAssetUrl } from "@/utils/getAssets"
 import { defineProps, computed } from "vue"
-import type { IUserMenus, IUserInfo } from "@/stores/types/index"
+import type { IUserMenus } from "@/stores/types/index"
 const props = defineProps({
-  userInfo: {
-    type: Object as () => IUserInfo,
-    required: true
-  },
   userMenus: {
     type: Array<IUserMenus>,
     required: true
   }
 })
-
-const userInfo = computed(() => props.userInfo)
 const userMenus = computed(() => props.userMenus)
 </script>
 
