@@ -13,7 +13,8 @@ const zh = {
     echarts: "echarts图表",
     directives: "常用指令",
     menus: "菜单管理",
-    system: "系统设置"
+    system: "系统设置",
+    logout: "退出登录"
   }
 }
 export default zh

@@ -13,7 +13,8 @@ const ja = {
     echarts: "Echartsグラフ",
     directives: "グローバル命令",
     menus: "メニュー",
-    system: "システム設定"
+    system: "システム設定",
+    logout: "ログオンの終了"
   }
 }
 export default ja

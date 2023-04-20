@@ -14,7 +14,8 @@ const en = {
     echarts: "Echarts",
     directives: "Commands",
     menus: "Menu Management",
-    system: "System Settings"
+    system: "System Settings",
+    logout: "Logout"
   }
 }
 export default en
