@@ -1,5 +1,10 @@
 const zh = {
   message: {
+    welcome: "欢迎访问DevEasy! 👏🏻👏🏻👏🏻",
+    loginTips: "请先登录您的账户以开始体验 😊",
+    rememberMe: "记住我",
+    forgotPassword: "忘记密码",
+    login: "登录",
     home: "首页",
     form: "Form表单",
     table: "表格",

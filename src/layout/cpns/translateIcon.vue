@@ -3,7 +3,7 @@
     <template v-slot:activator="{ props }">
       <v-btn :icon="'mdi-translate'" v-bind="props"> </v-btn>
     </template>
-    <v-list :theme="'light'">
+    <v-list>
       <template v-for="(item, index) in FlagMapCountry" :key="index">
         <v-list-item @click="translateLanguage(item.language)">
           <template v-slot:prepend>

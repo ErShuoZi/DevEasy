@@ -5,27 +5,27 @@ Mock.mock(`/api/login`, "post", (option) => {
   // 解析请求参数
   const { username, password } = JSON.parse(option.body)
 
-  if (username === "admin" && password === "123456") {
+  if (username === "admin@demo.com" && password === "123456") {
     return {
       code: 200,
       message: "登录成功",
       data: {
         token: "mock-token",
         userInfo: {
-          username: "admin",
+          username: "admin@demo.com",
           usertitle: "DevEasy Admin",
           useremail: "deveasy@gmailcom"
         }
       }
     }
-  } else if (username === "user" && password === "123456") {
+  } else if (username === "client@demo.com" && password === "123456") {
     return {
       code: 200,
       message: "登录成功",
       data: {
         token: "mock-token",
         userInfo: {
-          username: "user",
+          username: "client@demo.com",
           usertitle: "DevEasy User",
           useremail: "deveasy@gmailcom"
         }
@@ -44,7 +44,7 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
   // 解析请求参数
   const { token, username } = JSON.parse(option.body)
 
-  if (token && username === "admin") {
+  if (token && username === "admin@demo.com") {
     return {
       code: 200,
       message: "请求成功",
@@ -132,7 +132,7 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
         }
       ]
     }
-  } else if (token && username === "user") {
+  } else if (token && username === "client@demo.com") {
     return {
       code: 200,
       message: "请求成功",

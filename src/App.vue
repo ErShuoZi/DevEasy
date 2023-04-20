@@ -1,5 +1,5 @@
 <template>
-  <v-app class="main">
+  <v-app>
     <v-theme-provider>
       <router-view />
     </v-theme-provider>
@@ -22,10 +22,4 @@ if (localLanguage) {
 }
 </script>
 
-<style scoped lang="scss">
-.main {
-  width: 100%;
-  height: 100%;
-  color: var(--high-emphasis-opacity);
-}
-</style>
+<style scoped lang="scss"></style>

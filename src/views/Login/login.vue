@@ -16,12 +16,12 @@
     <v-col class="h-100" cols="12" lg="4">
       <v-card
         class="pa-2 h-100 d-flex justify-center align-center"
-        color="loginFormBg"
+        color="loginCardBackground"
       >
         <div class="d-block">
           <v-card-text>
-            <div class="text-h5">Welcome to DevEasy! 👏🏻</div>
-            <p>Please sign-in to your account and start the adventure</p>
+            <div class="text-h5">{{ $t("message.welcome") }}</div>
+            <p>{{ $t("message.loginTips") }}</p>
           </v-card-text>
           <v-card-text>
             <v-alert color="secondary" class="text-primary">
@@ -34,6 +34,7 @@
               <v-row>
                 <v-col cols="12">
                   <!-- model-value="admin" -->
+                  <!-- v-model="userInfo.username" -->
                   <v-text-field
                     v-model="userInfo.username"
                     label="Email"
@@ -44,6 +45,7 @@
                 </v-col>
                 <v-col cols="12">
                   <!--   model-value="123456" -->
+                  <!-- v-model="userInfo.password" -->
                   <v-text-field
                     color="primary"
                     v-model="userInfo.password"
@@ -58,11 +60,13 @@
                     class="d-flex justify-space-between align-center mt-1 mb-4"
                   >
                     <v-checkbox label="Remember me" hide-details></v-checkbox>
-                    <a href="">Forgot Password</a>
+                    <a href="">{{ $t("message.forgotPassword") }}</a>
                   </div>
 
                   <div>
-                    <v-btn color="primary" type="submit" block>LOGIN</v-btn>
+                    <v-btn color="primary" type="submit" block>{{
+                      $t("message.login")
+                    }}</v-btn>
                   </div>
                   <div class="d-flex justify-center mt-2">
                     <p>New on our platform? Create an account</p>
@@ -120,8 +124,8 @@ const theme = useTheme()
 const isDark = computed(() => theme.global.current.value.dark)
 
 const userInfo = reactive({
-  username: "",
-  password: ""
+  username: "admin@demo.com",
+  password: "123456"
 })
 const userStore = useUserStore()
 
