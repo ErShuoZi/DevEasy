@@ -1,12 +1,12 @@
 <template>
   <div class="not-found">
-    <v-img :width="300" :src="Image" />
+    <v-img :width="300" :src="getAssetUrl('404.png')" />
     <h2>您似乎来到了知识的边界~</h2>
   </div>
 </template>
 
 <script setup lang="ts">
-import Image from "../../assets/images/404.png"
+import { getAssetUrl } from "@/utils/getAssets"
 </script>
 
 <style scoped lang="scss">

@@ -16,7 +16,8 @@ const ja = {
     firstLevelMenu: "レベル1メニュー",
     secondaryMenu: "二次メニュー",
     system: "システム設定",
-    thirdLevelMenu: "レベル3メニュー"
+    thirdLevelMenu: "レベル3メニュー",
+    logout: "ログオンの終了"
   }
 }
 export default ja

@@ -17,7 +17,8 @@ const en = {
     firstLevelMenu: "First Level",
     secondaryMenu: "Second Level",
     thirdLevelMenu: "Third Level ",
-    system: "System Settings"
+    system: "System Settings",
+    logout: "Logout"
   }
 }
 export default en
