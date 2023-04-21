@@ -1,9 +1,12 @@
 <template>
   <v-app>
     <v-layout>
-      <v-navigation-drawer :permanent="true" class="layout-vertical-nav">
-        <userMenu :user-menus="userMenus" />
-      </v-navigation-drawer>
+      <!-- hide-on-leave -->
+      <v-scroll-y-transition :hide-on-leave="true" :leave-absolute="true">
+        <v-navigation-drawer :permanent="true" class="layout-vertical-nav">
+          <userMenu :user-menus="userMenus" />
+        </v-navigation-drawer>
+      </v-scroll-y-transition>
 
       <v-app-bar title="Application bar">
         <template v-slot:append>

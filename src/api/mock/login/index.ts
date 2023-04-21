@@ -113,13 +113,44 @@ Mock.mock(`/api/userMenus`, "post", (option) => {
           icon: "mdi-application-cog-outline"
         },
         {
-          path: "/layout/menu",
+          path: "/layout/menus",
           name: "menus",
-          component: "/layout/menu",
+          component: "/layout/menus",
           meta: {
             title: "菜单嵌套"
           },
-          icon: "mdi-menu"
+          icon: "mdi-menu",
+          children: [
+            {
+              path: "/layout/menus/index",
+              name: "firstLevelMenu",
+              component: "/layout/menus/index",
+              meta: {
+                title: "一级菜单"
+              },
+              icon: "mdi-circle-outline"
+            },
+            {
+              path: "/layout/menus/second",
+              name: "secondaryMenu",
+              component: "/layout/menus/second",
+              meta: {
+                title: "二级菜单"
+              },
+              icon: "mdi-circle-outline",
+              children: [
+                {
+                  path: "/layout/menus/third",
+                  name: "thirdLevelMenu",
+                  component: "/layout/menus/third",
+                  meta: {
+                    title: "三级菜单"
+                  },
+                  icon: "mdi-circle-outline"
+                }
+              ]
+            }
+          ]
         },
         {
           path: "/layout/system",

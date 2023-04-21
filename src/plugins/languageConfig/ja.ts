@@ -13,7 +13,10 @@ const ja = {
     echarts: "Echartsグラフ",
     directives: "グローバル命令",
     menus: "メニュー",
-    system: "システム設定"
+    firstLevelMenu: "レベル1メニュー",
+    secondaryMenu: "二次メニュー",
+    system: "システム設定",
+    thirdLevelMenu: "レベル3メニュー"
   }
 }
 export default ja

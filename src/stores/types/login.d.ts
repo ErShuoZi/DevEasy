@@ -1,3 +1,4 @@
+import type { RouteRecordRaw } from "vue-router"
 export type IUserMenus = {
   path: string
   name: string
@@ -5,6 +6,7 @@ export type IUserMenus = {
   meta: {
     title: string
   }
+  children: any[]
   icon: string
 }
 export type IUserInfo = {

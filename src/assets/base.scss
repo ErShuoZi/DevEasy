@@ -39,6 +39,11 @@ img {
   margin: 0 16px;
 }
 
+// 第三方引入图标大小
+.mdi-circle-outline {
+  font-size: 14px !important;
+}
+
 #nprogress .bar {
   background: var(--primary-color) !important; //自定义颜色
 }

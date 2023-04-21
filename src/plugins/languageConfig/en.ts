@@ -14,6 +14,9 @@ const en = {
     echarts: "Echarts",
     directives: "Commands",
     menus: "Menu Management",
+    firstLevelMenu: "First Level",
+    secondaryMenu: "Second Level",
+    thirdLevelMenu: "Third Level ",
     system: "System Settings"
   }
 }
